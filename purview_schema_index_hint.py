@@ -1,0 +1,1 @@
+print('schema index hint script')

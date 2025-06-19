@@ -1,0 +1,1 @@
+print('data generation script')
