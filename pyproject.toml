@@ -9,13 +9,26 @@ license = {text = "MIT"}
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "azure-search-documents (>=11.5.2,<12.0.0)",
-    "azure-identity (>=1.23.0,<2.0.0)",
-    "azure-purview-catalog (>=1.0.0b4,<2.0.0)",
-    "ipykernel (>=6.29.5,<7.0.0)",
-    "azure-storage-file-datalake (>=12.20.0,<13.0.0)"
+    "azure-search-documents (>=11.5.2,<12.0.0)",               # Azure Search SDK
+    "azure-identity (>=1.23.0,<2.0.0)",                        # Azure SDK - Authentication
+    "azure-purview-catalog (>=1.0.0b4,<2.0.0)",                # Azure Purview Catalog
+    "ipykernel (>=6.29.5,<7.0.0)",                             # Jupyter Kernel Support
+    "azure-storage-file-datalake (>=12.20.0,<13.0.0)",         # Azure Data Lake Storage
+    "azure-purview-scanning (>=1.0.0b2,<2.0.0)",               # Azure Purview Scanning
+    "azure-purview-administration (>=1.0.0b1,<2.0.0)",         # Azure Purview Administration
+    "azure-purview-account (>=1.0.0b1,<2.0.0)",                # Azure Purview Account Management
+    "azure-core (>=1.34.0,<2.0.0)",                            # Azure SDK Core Components
+    "python-dotenv (>=1.1.0,<2.0.0)",                          # Environment Variable Loader
+    "msal (>=1.32.3,<2.0.0)",                                  # Microsoft Authentication Library
+    "pandas (>=2.3.0,<3.0.0)",                                 # Data Processing
+    "numpy (>=2.3.1,<3.0.0)",                                  # Numerical Computing
+    "pyodbc (>=5.2.0,<6.0.0)",                                 # ODBC Database Connector
+    "azure-storage-blob (>=12.25.1,<13.0.0)",                  # Azure Blob Storage SDK
+    "azure-cosmos (>=4.9.0,<5.0.0)",                           # Azure Cosmos DB SDK
+    "pyarrow (>=20.0.0,<21.0.0)",                              # Additional Data Format Support (Parquet)
+    "openpyxl (>=3.1.5,<4.0.0)",                               # Additional Data Format Support (Excel)
+    "mypy (>=1.16.1,<2.0.0)"                                   # Type Checking and Static Analysis
 ]
-
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

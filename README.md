@@ -15,19 +15,26 @@
 
     - [Scanning multiple Azure data sources](https://learn.microsoft.com/en-us/purview/troubleshoot-connections?wt.mc_id=mspurview_inproduct_learnmoreerrorlinks_troubleshootscanconnection_csadai#scanning-data-sources-using-private-link)
 
-3. Create a Storage Account, then upgrade it to Data Lake Storage Gen2 in Azure, and upload sample data to the storage.
+3. Create data sources and sample data
 
-    - [Create a storage account to use with Azure Data Lake Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/create-data-lake-storage-account)
-    - [Azure AI Search Sample Data](https://github.com/Azure-Samples/azure-search-sample-data)
-    - (another option) [Azure Data SQL Samples](https://github.com/microsoft/sql-server-samples) > `samples/databases/northwind-pubs`
+    - Create a Storage Account, then upgrade it to Data Lake Storage Gen2 in Azure, and upload sample data to the storage. 
+        - [Create a storage account to use with Azure Data Lake Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/create-data-lake-storage-account)
+        - [Azure AI Search Sample Data](https://github.com/Azure-Samples/azure-search-sample-data) > `hotelreviews`
+    - Create an Azure SQL Server to test the connection to Purview.
+        - [Azure Data SQL Samples](https://github.com/microsoft/sql-server-samples) > `samples/databases/northwind-pubs`
+        - [Quickstart: Use SSMS to connect to and query Azure SQL Database or Azure SQL Managed Instance](https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-ssms?view=azuresql)
 
 4. Open Microsoft Purview Governance Portal > Scan data sources in Data Map
 
     - [Scan data sources in Data Map](https://learn.microsoft.com/en-us/purview/data-map-scan-data-sources)
+    - [Discover and govern Azure SQL Database in Microsoft Purview](https://learn.microsoft.com/en-us/purview/register-scan-azure-sql-database?tabs=sql-authentication): SQL authentication.
 
 5. Create a Service Principal for API access to Purview.
 
     - [Create a service principal (application)](https://learn.microsoft.com/en-us/purview/data-gov-api-rest-data-plane)
+
+6. Use the Microsoft Purview Python SDK
+    - [Tutorial: Use the Microsoft Purview Python SDK](https://learn.microsoft.com/en-us/purview/data-gov-python-sdk)
 
 ### 🔎 Azure AI Search
 
@@ -39,3 +46,5 @@
 
     - [Supported data types (Azure AI Search)](https://learn.microsoft.com/en-us/rest/api/searchservice/supported-data-types)
     - [Create an index in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-how-to-create-search-index?source=recommendations&tabs=portal)
+    - [Quickstart: Create a search index in the Azure portal](https://learn.microsoft.com/en-us/azure/search/search-get-started-portal)
+
