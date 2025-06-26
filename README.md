@@ -165,11 +165,18 @@ print(document)
 
 - Summary
 
+```
 Azure Term	Python analogy
 source	document["key"]
 name	function parameter name
 targetName	dict key in the output, source references that key for next skill input
+```
 
+✅ The names meaning in different operations: skill logic vs. index mapping.
+
+Inside a skill:`name` = skill-specific internal label (fixed by Microsoft skill design)
+
+In index mapping:`name` = output field name in your Azure Search index
 
 ## Type hints sample output
 
