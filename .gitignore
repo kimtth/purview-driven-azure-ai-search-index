@@ -204,3 +204,4 @@ __marimo__/
 /poetry.lock
 /tmp
 /.vscode
+/schema_debug

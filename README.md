@@ -1,5 +1,5 @@
 
-# Purview-Driven Azure AI Search
+# Purview-Driven Azure AI Search Type hint
 
 🧪 Proof of Concept (PoC) script to evaluate the feasibility of the Purview API, aiming to generate type hints and connection details for an Azure AI Search index based on schema data retrieved from the Purview Data Catalog.
 
@@ -40,6 +40,10 @@
     - [Purview API Explorer](https://github.com/microsoft/purview-api-samples/): GUI Application to learn how to call the Purview APIs
     - [Purview chat](https://github.com/johnea-chva/purview-chat):  Demo Application integrate with Purview
     - [📺Youtube](https://www.youtube.com/watch?v=Ta-nrefqdb0): Secure your AI apps with user-context-aware controls | Microsoft Purview SDK
+    - [PyApacheAtlas: A Python SDK for Azure Purview and Apache Atlas](https://github.com/wjohnson/pyapacheatlas)
+    - [Rest API Documentation](https://learn.microsoft.com/en-us/rest/api/purview)
+        - [get shcema](https://learn.microsoft.com/en-us/rest/api/purview/datamapdataplane/entity/get)
+        - [list collection](https://learn.microsoft.com/en-us/rest/api/purview/accountdataplane/collections/list-collections)
 
 ### 🔎 Azure AI Search
 
@@ -58,3 +62,14 @@
     - [Azure Search Python sample code](https://github.com/Azure-Samples/azure-search-python-samples)
 
 
+## Sample output
+
+```bash
+2025-MM-DD 00:01:34.006 | INFO     | __main__:search_data_assets:125 - Search count: **REDACTED**
+2025-MM-DD 00:01:34.008 | INFO     | __main__:search_data_assets:130 - Name: Customer, Type: azure_sql_table, GUID: adb80e06-3283-4907-b8f8-7ef6f6f60000, qualifiedName: mssql://**REDACTED**.database.windows.net/**REDACTED**/SalesLT/Customer
+2025-MM-DD 00:01:34.009 | INFO     | __main__:search_data_assets:130 - Name: Address, Type: azure_sql_table, GUID: 09d0c95f-4238-44c8-9c7d-5af6f6f60000, qualifiedName: mssql://**REDACTED**.database.windows.net/**REDACTED**/SalesLT/Address
+...
+2025-MM-DD 00:01:35.393 | INFO     | __main__:main:200 - Table azure_blob_path (**REDACTED**): {}
+2025-MM-DD 00:01:35.881 | INFO     | __main__:main:200 - Table azure_sql_table (**REDACTED**): {'ProductCategoryID': <AzureSearchDataType.EDM_INT32: 'Edm.Int32'>, 'Weight': <AzureSearchDataType.EDM_DOUBLE: 'Edm.Double'>, 'ProductID': <AzureSearchDataType.EDM_INT32: 'Edm.Int32'>, 'SellStartDate': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'DiscontinuedDate': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'ListPrice': <AzureSearchDataType.EDM_DOUBLE: 'Edm.Double'>, 'ThumbNailPhoto': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'Name': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'SellEndDate': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'rowguid': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'Size': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'Color': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'ProductModelID': <AzureSearchDataType.EDM_INT32: 'Edm.Int32'>, 'StandardCost': <AzureSearchDataType.EDM_DOUBLE: 'Edm.Double'>, 'ThumbnailPhotoFileName': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'ProductNumber': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'ModifiedDate': <AzureSearchDataType.EDM_STRING: 'Edm.String'>}
+2025-MM-DD 00:01:36.349 | INFO     | __main__:main:200 - Table azure_sql_view (**REDACTED**): {'Copyright': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'Material': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'Saddle': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'Style': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'NoOfYears': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'RiderExperience': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'MaintenanceDescription': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'ProductLine': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'ProductURL': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'PictureSize': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'WarrantyPeriod': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'ProductModelID': <AzureSearchDataType.EDM_INT32: 'Edm.Int32'>, 'Pedal': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'BikeFrame': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'Crankset': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'rowguid': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'Color': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'PictureAngle': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'Manufacturer': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'Name': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'WarrantyDescription': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'Wheel': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'ModifiedDate': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'Summary': <AzureSearchDataType.EDM_STRING: 'Edm.String'>, 'ProductPhotoID': <AzureSearchDataType.EDM_STRING: 'Edm.String'>}
+```
