@@ -61,8 +61,117 @@
     - REST API Definitions & Reponse examples > See this under `aisearch` folder of the project workspace. 
     - [Azure Search Python sample code](https://github.com/Azure-Samples/azure-search-python-samples)
 
+## Azure AI Search Skillset Mapping — Python Analogy
 
-## Sample output
+- Skill inputs:
+```
+name: expected parameter name (like function arg)
+source: value from document (e.g. /document/field)
+```
+
+- Skill outputs:
+```
+name: predefined output label
+targetName: key used to store output in document (dict key)
+```
+
+- Azure AI Search Skillset Json vs Python analogy
+
+```json
+"inputs": [
+  { "name": "text", "source": "/document/extracted_content" }
+],
+"outputs": [
+  { "name": "textItems", "targetName": "pages" }
+]
+```
+
+```python
+document = {
+    "extracted_content": "Some extracted text."
+}
+
+def split_skill(text):
+    return {
+        "pages": text.split("\n\n")
+    }
+
+# Run skill
+document.update(split_skill(document["extracted_content"]))
+```
+
+- Chaining explanation
+
+Each skill’s outputs (targetNames) become keys in the document dict.
+Subsequent skills use these keys as source inputs, enabling step-by-step data flow:
+
+```python
+
+'''
+{
+  "skills": [
+    {
+      "@odata.type": "#Microsoft.Skills.Util.DocumentExtractionSkill",
+      "name": "extraction-skill",
+      "context": "/document",
+      "inputs": [
+        { "name": "file_data", "source": "/document/file_data" }
+      ],
+      "outputs": [
+        { "name": "content", "targetName": "extracted_content" },
+        { "name": "normalized_images", "targetName": "normalized_images" }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Text.SplitSkill",
+      "name": "split-skill",
+      "context": "/document",
+      "inputs": [
+        { "name": "text", "source": "/document/extracted_content" }
+      ],
+      "outputs": [
+        { "name": "textItems", "targetName": "pages" }
+      ]
+    }
+  ]
+}
+'''
+
+# Initial document with binary file data
+document = {
+    "file_data": "binary file content"
+}
+
+# Extraction Skill
+def extract(file_data):
+    return {
+        "extracted_content": "Text",
+        "normalized_images": ["img1", "img2"]
+    }
+
+# Split Skill
+def split(text):
+    return {
+        "pages": text.split("\n\n")
+    }
+
+# Run skills in sequence, aligned with Azure JSON mappings
+document.update(extract(document["file_data"]))
+document.update(split(document["extracted_content"]))
+
+# Final document structure
+print(document)
+```
+
+- Summary
+
+Azure Term	Python analogy
+source	document["key"]
+name	function parameter name
+targetName	dict key in the output, source references that key for next skill input
+
+
+## Type hints sample output
 
 ```bash
 2025-MM-DD 00:01:34.006 | INFO     | __main__:search_data_assets:125 - Search count: **REDACTED**
