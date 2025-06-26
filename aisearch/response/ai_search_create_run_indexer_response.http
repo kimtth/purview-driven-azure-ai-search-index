@@ -1,0 +1,15 @@
+HTTP/1.1 201 Created
+Transfer-Encoding: chunked
+Content-Type: application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8
+ETag: "0x8DDB4819AE265FA"
+Location: https://<your-resource-name>.search.windows.net:443/indexers('doc-extraction-multimodal-embedding-indexer')?api-version=2025-05-01-preview
+Server: Microsoft-IIS/10.0
+Strict-Transport-Security: max-age=2592000, max-age=15724800; includeSubDomains
+Preference-Applied: odata.include-annotations="*"
+OData-Version: 4.0
+request-id: **REDACTED**
+elapsed-time: 7239
+Date: **REDACTED**
+Connection: close
+
+{"@odata.context":"https://<your-resource-name>.search.windows.net/$metadata#indexers/$entity","@odata.etag":"\"0x8DDB4819AE265FA\"","name":"doc-extraction-multimodal-embedding-indexer","description":null,"dataSourceName":"doc-extraction-multimodal-embedding-ds","skillsetName":"doc-extraction-multimodal-embedding-skillset","targetIndexName":"doc-extraction-multimodal-embedding-index","disabled":null,"schedule":null,"parameters":{"batchSize":1,"maxFailedItems":-1,"maxFailedItemsPerBatch":0,"configuration":{"allowSkillsetToReadFileData":true}},"fieldMappings":[{"sourceFieldName":"metadata_storage_name","targetFieldName":"document_title","mappingFunction":null}],"outputFieldMappings":[],"cache":null,"encryptionKey":null}

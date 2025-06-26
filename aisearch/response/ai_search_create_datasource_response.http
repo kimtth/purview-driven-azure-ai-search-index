@@ -1,0 +1,15 @@
+HTTP/1.1 201 Created
+Transfer-Encoding: chunked
+Content-Type: application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8
+ETag: "0x8DDB47CDB0E9D0A"
+Location: https://<your-resource-name>.windows.net:443/datasources('doc-extraction-multimodal-embedding-ds')?api-version=2025-05-01-preview
+Server: Microsoft-IIS/10.0
+Strict-Transport-Security: max-age=2592000, max-age=15724800; includeSubDomains
+Preference-Applied: odata.include-annotations="*"
+OData-Version: 4.0
+request-id: **REDACTED**
+elapsed-time: 256
+Date: **REDACTED**
+Connection: close
+
+{"@odata.context":"https://<your-resource-name>.search.windows.net/$metadata#datasources/$entity","@odata.etag":"\"0x8DDB47CDB0E9D0A\"","name":"doc-extraction-multimodal-embedding-ds","description":null,"type":"azureblob","subtype":null,"indexerPermissionOptions":[],"credentials":{"connectionString":null},"container":{"name":"doc-extraction-multimodality-container","query":null},"dataChangeDetectionPolicy":null,"dataDeletionDetectionPolicy":null,"encryptionKey":null,"identity":null}

@@ -1,0 +1,22 @@
+### Create a data source
+POST {{baseUrl}}/datasources?api-version=2025-05-01-preview   HTTP/1.1
+  Content-Type: application/json
+  api-key: {{apiKey}}
+
+  {
+    "name": "doc-extraction-multimodal-embedding-ds",
+    "description": null,
+    "type": "azureblob",
+    "subtype": null,
+    "credentials": {
+      "connectionString":  "{{storageConnection}}"
+    },
+    "container": {
+      "name": "doc-extraction-multimodality-container",
+      "query": null
+    },
+    "dataChangeDetectionPolicy": null,
+    "dataDeletionDetectionPolicy": null,
+    "encryptionKey": null,
+    "identity": null
+  }

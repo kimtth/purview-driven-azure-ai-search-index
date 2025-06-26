@@ -36,6 +36,11 @@
 6. Use the Microsoft Purview Python SDK
     - [Tutorial: Use the Microsoft Purview Python SDK](https://learn.microsoft.com/en-us/purview/data-gov-python-sdk)
 
+7. References: Purview
+    - [Purview API Explorer](https://github.com/microsoft/purview-api-samples/): GUI Application to learn how to call the Purview APIs
+    - [Purview chat](https://github.com/johnea-chva/purview-chat):  Demo Application integrate with Purview
+    - [📺Youtube](https://www.youtube.com/watch?v=Ta-nrefqdb0): Secure your AI apps with user-context-aware controls | Microsoft Purview SDK
+
 ### 🔎 Azure AI Search
 
 1. Create Index by Python SDK
@@ -47,4 +52,9 @@
     - [Supported data types (Azure AI Search)](https://learn.microsoft.com/en-us/rest/api/searchservice/supported-data-types)
     - [Create an index in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-how-to-create-search-index?source=recommendations&tabs=portal)
     - [Quickstart: Create a search index in the Azure portal](https://learn.microsoft.com/en-us/azure/search/search-get-started-portal)
+
+3. References: Azure AI Search
+    - REST API Definitions & Reponse examples > See this under `aisearch` folder of the project workspace. 
+    - [Azure Search Python sample code](https://github.com/Azure-Samples/azure-search-python-samples)
+
 

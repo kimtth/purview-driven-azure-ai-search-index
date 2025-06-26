@@ -202,3 +202,5 @@ __marimo__/
 
 
 /poetry.lock
+/tmp
+/.vscode
